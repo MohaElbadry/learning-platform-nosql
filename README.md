@@ -7,7 +7,6 @@ Ce projet est une API backend pour une plateforme d'apprentissage en ligne. Il u
 
 ### Prérequis
 - Node.js
-- Docker et Docker Compose
 
 ### Étapes d'installation
 1. Clonez le dépôt :
