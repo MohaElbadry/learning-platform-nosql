@@ -1,5 +1,7 @@
 // Question: Comment organiser le point d'entrée de l'application ?
+// Réponse: Organiser le point d'entrée de l'application en modules distincts pour une meilleure lisibilité et maintenabilité.
 // Question: Quelle est la meilleure façon de gérer le démarrage de l'application ?
+// Réponse: La meilleure façon de gérer le démarrage de l'application est de séparer la logique de démarrage dans une fonction dédiée et de gérer les erreurs de manière appropriée.
 
 const express = require('express');
 const config = require('./config/env');
