@@ -16,15 +16,30 @@ async function startServer() {
     // TODO: Configurer les middlewares Express
     // TODO: Monter les routes
     // TODO: Démarrer le serveur
+    await db.connectMongo();
+    await db.connectRedis();
+
+    app.use(express.json());
+
+    app.use("/courses", courseRoutes);
+    app.use("/students", studentRoutes);
+
+    app.listen(config.port, () => {
+      console.log(`Server is running on http://localhost:${config.port}`);
+    });
   } catch (error) {
-    console.error('Failed to start server:', error);
+    console.error("Failed to start server:", error);
     process.exit(1);
   }
 }
 
 // Gestion propre de l'arrêt
-process.on('SIGTERM', async () => {
+process.on("SIGINT", async () => {
   // TODO: Implémenter la fermeture propre des connexions
+  await db.closeMongo();
+  await db.closeRedis();
+  console.log("Server is shutting down");
+  process.exit(0);
 });
 
 startServer();
