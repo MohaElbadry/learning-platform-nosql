@@ -40,12 +40,24 @@ Ce projet est une API backend pour une plateforme d'apprentissage en ligne. Il u
 ## Structure du projet
 
 ```
-src/
-├── config/         # Configuration et variables d'environnement
-├── controllers/    # Logique de contrôle des routes
-├── routes/        # Définition des routes API
-├── services/      # Services pour interagir avec les bases de données
-└── app.js         # Point d'entrée de l'application
+├── src
+│   ├── config
+│   │   ├── db.js                # Module de connexion aux bases de données
+│   │   ├── env.js               # Validation des variables d'environnement
+│   ├── controllers
+│   │   ├── courseController.js  # Contrôleur pour les cours
+│   │   ├── studentController.js # Contrôleur pour les étudiants
+│   ├── routes
+│   │   ├── courseRoutes.js      # Routes pour les cours
+│   │   ├── studentRoutes.js     # Routes pour les étudiants
+│   ├── services
+│   │   ├── mongoService.js      # Services utilitaires pour MongoDB
+│   │   ├── redisService.js      # Services utilitaires pour Redis
+│   ├── app.js                   # Point d'entrée de l'application
+├── .env                         # Fichier de configuration des variables d'environnement
+├── .gitignore                   # Fichier pour ignorer les fichiers et dossiers spécifiques
+├── package.json                 # Dépendances et scripts du projet
+└── README.md                    # Documentation du projet
 ```
 
 ## Choix techniques
